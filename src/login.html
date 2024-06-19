@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="stylesi.css">
+</head>
+<body>
+    <img src="KNECC NU.png" alt="Background Image" class="background-image">
+        <div class="login-container">
+        <h1>Login</h1>
+        <div class="text-container">
+
+        </div>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message" class="error-message"></p>
+    </div>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const errorMessage = document.getElementById('error-message');
+            const validPasswords = ['66366025', '66366285'];
+
+            if (validPasswords.includes(password.value)) {
+                window.location.href = 'rules.html';
+            } else {
+                errorMessage.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+                username.classList.add('error');
+                password.classList.add('error');
+                document.querySelector('.login-container').classList.add('shake');
+
+                setTimeout(() => {
+                    document.querySelector('.login-container').classList.remove('shake');
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>

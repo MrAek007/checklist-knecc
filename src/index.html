@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มข้อมูล</title>
+    <link rel="stylesheet" href="stylesiiii.css">
+</head>
+<body>
+    <div class="background">
+        <img src="KNECC NU 6.png" alt="Background Image" class="background-image">
+    </div>
+    <div class="form-container">
+        <h1>ฟอร์มข้อมูล</h1>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tank-number">หมายเลขถัง:<br></label>
+                    <input type="text" id="tank-number" name="tank-number">
+                </div>                
+                <div class="form-group">
+                    <label for="floor">ชั้น:<br></label>
+                    <input type="text" id="floor" name="floor">
+                </div>
+                <div class="form-group">
+                    <label for="installation-year">ปีที่ติดตั้ง:</label>
+                    <input type="text" id="installation-year" name="installation-year">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">วันที่</th>
+                        <th colspan="4">การตรวจสอบ</th>
+                        <th rowspan="2">ผู้ตรวจสอบ</th>
+                        <th rowspan="2">หมายเหตุ</th>
+                        <th rowspan="2">รูปภาพ</th>
+                    </tr>
+                    <tr>
+                        <th>มาตรวัด</th>
+                        <th>ซีล/สลัก</th>
+                        <th>สายฉีด</th>
+                        <th>สภาพถัง</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="date-1"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-1"><br>
+                            <input type="file" name="gauge-image-1" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-1"><br>
+                            <input type="file" name="seal-image-1" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-1"><br>
+                            <input type="file" name="hose-image-1" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-1"><br>
+                            <input type="file" name="tank-image-1" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-1"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleOtherOption(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                            <input type="text" name="notes-other-1" class="notes-other" style="display:none;" placeholder="โปรดระบุ">
+                        </td>
+                        <td><input type="file" name="image-1" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-2"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-2"><br>
+                            <input type="file" name="gauge-image-2" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-2"><br>
+                            <input type="file" name="seal-image-2" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-2"><br>
+                            <input type="file" name="hose-image-2" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-2"><br>
+                            <input type="file" name="tank-image-2" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-2"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-2" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-3"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-3"><br>
+                            <input type="file" name="gauge-image-3" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-3"><br>
+                            <input type="file" name="seal-image-3" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-3"><br>
+                            <input type="file" name="hose-image-3" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-3"><br>
+                            <input type="file" name="tank-image-3" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-3"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-3" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-4"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-4"><br>
+                            <input type="file" name="gauge-image-4" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-4"><br>
+                            <input type="file" name="seal-image-4" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-4"><br>
+                            <input type="file" name="hose-image-4" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-4"><br>
+                            <input type="file" name="tank-image-4" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-4"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-4" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-5"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-5"><br>
+                            <input type="file" name="gauge-image-5" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-5"><br>
+                            <input type="file" name="seal-image-5" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-5"><br>
+                            <input type="file" name="hose-image-5" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-5"><br>
+                            <input type="file" name="tank-image-5" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-5"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-5" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-6"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-6"><br>
+                            <input type="file" name="gauge-image-6" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-6"><br>
+                            <input type="file" name="seal-image-6" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-6"><br>
+                            <input type="file" name="hose-image-6" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-6"><br>
+                            <input type="file" name="tank-image-6" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-6"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-6" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-7"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-7"><br>
+                            <input type="file" name="gauge-image-7" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-7"><br>
+                            <input type="file" name="seal-image-7" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-7"><br>
+                            <input type="file" name="hose-image-7" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-7"><br>
+                            <input type="file" name="tank-image-7" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-7"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-7" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-8"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-8"><br>
+                            <input type="file" name="gauge-image-8" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-8"><br>
+                            <input type="file" name="seal-image-8" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-8"><br>
+                            <input type="file" name="hose-image-8" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-8"><br>
+                            <input type="file" name="tank-image-8" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-8"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-8" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-9"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-9"><br>
+                            <input type="file" name="gauge-image-9" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-9"><br>
+                            <input type="file" name="seal-image-9" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-9"><br>
+                            <input type="file" name="hose-image-9" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-9"><br>
+                            <input type="file" name="tank-image-9" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-9"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-9" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-10"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-10"><br>
+                            <input type="file" name="gauge-image-10" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-10"><br>
+                            <input type="file" name="seal-image-10" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-10"><br>
+                            <input type="file" name="hose-image-10" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-10"><br>
+                            <input type="file" name="tank-image-10" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-10"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-10" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-11"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-11"><br>
+                            <input type="file" name="gauge-image-11" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-11"><br>
+                            <input type="file" name="seal-image-11" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-11"><br>
+                            <input type="file" name="hose-image-11" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-11"><br>
+                            <input type="file" name="tank-image-11" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-11"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-11" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="date-12"></td>
+                        <td>
+                            <input type="checkbox" name="gauge-12"><br>
+                            <input type="file" name="gauge-image-12" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="seal-12"><br>
+                            <input type="file" name="seal-image-12" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="hose-12"><br>
+                            <input type="file" name="hose-image-12" accept="image/*">
+                        </td>
+                        <td>
+                            <input type="checkbox" name="tank-12"><br>
+                            <input type="file" name="tank-image-12" accept="image/*">
+                        </td>
+                        <td><input type="text" name="inspector-12"></td>
+                        <td>
+                            <select name="notes-1" class="notes-dropdown" onchange="handleNotesChange(this)">
+                                <option value="">เลือก</option>
+                                <option value="มาตรวัดมีการชำรุด">มาตรวัดมีการชำรุด</option>
+                                <option value="ซีล/สลัก ไม่มีหรือมีการชำรุด">ซีล/สลัก ไม่มีหรือมีการชำรุด</option>
+                                <option value="สายฉีดมีการชำรุด">สายฉีดมีการชำรุด</option>
+                                <option value="สภาพถังมีการชำรุด">สภาพถังมีการชำรุด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+                        <td><input type="file" name="image-12" accept="image/*"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit">บันทึก</button>
+        </form>
+    </div>
+    <script>
+        function handleOtherOption(selectElement) {
+            const otherInput = selectElement.nextElementSibling;
+            if (selectElement.value === "อื่นๆ") {
+                otherInput.style.display = "inline";
+                otherInput.required = true;
+            } else {
+                otherInput.style.display = "none";
+                otherInput.required = false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const extinguisherNumber = params.get('extinguisher');
+            if (extinguisherNumber) {
+                document.getElementById('tank-number').value = extinguisherNumber;
+            }
+            setFormValues();
+        });
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const extinguisherNumber = urlParams.get('extinguisher');
+            if (extinguisherNumber) {
+                document.getElementById('tank-number').value = extinguisherNumber;
+            }
+        }
+    </script>
+</body>
+</html>

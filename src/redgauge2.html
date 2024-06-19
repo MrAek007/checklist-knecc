@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Gauge - Floor 2</title>
+    <link rel="stylesheet" href="styles red.css">
+    <img src="KNECC NU (3).png" alt="Background Image" class="background-image">
+</head>
+<body>
+    <div class="container">
+        <button class="option-button" onclick="selectExtinguisherNumber(1)">ถังดับเพลิงหมายเลข 001</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(2)">ถังดับเพลิงหมายเลข 002</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(3)">ถังดับเพลิงหมายเลข 003</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(4)">ถังดับเพลิงหมายเลข 004</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(5)">ถังดับเพลิงหมายเลข 005</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(6)">ถังดับเพลิงหมายเลข 006</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(7)">ถังดับเพลิงหมายเลข 007</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(8)">ถังดับเพลิงหมายเลข 008</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(9)">ถังดับเพลิงหมายเลข 009</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(10)">ถังดับเพลิงหมายเลข 010</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(11)">ถังดับเพลิงหมายเลข 011</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(12)">ถังดับเพลิงหมายเลข 012</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(13)">ถังดับเพลิงหมายเลข 013</button>
+    </div>
+
+    <script>
+        function selectExtinguisherNumber(number) {
+        alert(`คุณเลือกถังดับเพลิงหมายเลข ${number}`);
+        // เพิ่มหมายเลขที่ผู้ใช้เลือกไปที่ URL
+        window.location.href = `index.html?extinguisher=${number}`;
+    }
+
+
+    </script> 
+</body>
+</html>

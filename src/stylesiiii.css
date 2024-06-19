@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 95%;
+    max-width: 1800px; /* เพิ่มค่าของ max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+form {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-right: 10px;
+    width: auto;
+    white-space: nowrap;
+}
+
+input[type="text"], input[type="file"], input[type="checkbox"] {
+    border: none;
+    width: 100%;
+    padding: 5px; /* เพิ่ม padding */
+    box-sizing: border-box;
+    outline: none;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* ทำให้ข้อความอยู่ตรงกลาง */
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+    display: block; /* ทำให้ checkbox อยู่ตรงกลาง */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="file"] {
+    width: auto;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #FF6600;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #cc5200;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px; /* เพิ่ม padding */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle; /* ทำให้เนื้อหาในเซลล์อยู่ตรงกลางในแนวตั้ง */
+}
+
+th {
+    background-color: #F0F0F0;
+}
+
+select, input[type="text"] {
+    text-align: center; /* ทำให้ข้อความใน select และ input[type="text"] อยู่ตรงกลาง */
+}
+
+td input[type="file"] {
+    display: block;
+    margin: 0 auto;
+}
+
+/* เพิ่มคลาสเพื่อกำหนดขนาดของแต่ละช่อง */
+td input[type="text"], td select, td input[type="file"] {
+    width: 100%; /* เพิ่มความกว้าง */
+}
+
+/* กำหนดขนาดของช่องวันที่ */
+td input.date-input {
+    width: 50px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่องการตรวจสอบ */
+td input.inspection-input {
+    width: 150px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่องผู้ตรวจสอบ */
+td input.inspector-input {
+    width: 150px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่องหมายเหตุ */
+td select.notes-dropdown {
+    width: 150px; /* ปรับขนาดตามที่ต้องการ */
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* กำหนดขนาดของช่องรูปภาพ */
+td input.photo-input {
+    width: 100px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่อง หมายเลขถัง */
+td input.tank-number-input, input.narrow-input {
+    width: 50px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่อง ชั้น */
+td input.floor-input, input.narrow-input {
+    width: 50px; /* ปรับขนาดตามที่ต้องการ */
+}
+
+/* กำหนดขนาดของช่อง ปีที่ติดตั้ง */
+td input.installation-year-input, input.narrow-input {
+    width: 50px; /* ปรับขนาดตามที่ต้องการ */
+}

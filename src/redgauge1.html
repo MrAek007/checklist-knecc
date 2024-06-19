@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Gauge - Floor 1</title>
+    <link rel="stylesheet" href="styles red.css">
+    <img src="KNECC NU (3).png" alt="Background Image" class="background-image">
+</head>
+<body>
+    <div class="container">
+        <button class="option-button" onclick="selectExtinguisherNumber(1)">ถังดับเพลิงหมายเลข 1</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(2)">ถังดับเพลิงหมายเลข 2</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(3)">ถังดับเพลิงหมายเลข 3</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(4)">ถังดับเพลิงหมายเลข 4</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(5)">ถังดับเพลิงหมายเลข 5</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(6)">ถังดับเพลิงหมายเลข 6</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(7)">ถังดับเพลิงหมายเลข 7</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(8)">ถังดับเพลิงหมายเลข 8</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(9)">ถังดับเพลิงหมายเลข 9</button>
+        <button class="option-button" onclick="selectExtinguisherNumber(10)">ถังดับเพลิงหมายเลข 10</button>
+    </div>
+
+    <script>
+        function selectExtinguisherNumber(number) {
+            alert(`คุณเลือกถังดับเพลิงหมายเลข ${number}`);
+            // เพิ่มหมายเลขที่ผู้ใช้เลือกไปที่ URL
+            window.location.href = `index.html?extinguisher=${number}`;
+    }
+
+
+    </script>   
+</body>
+</html>

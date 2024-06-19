@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0; /* กำหนดให้ไม่มีระยะห่างรอบขอบของ body */
+    padding: 0; /* กำหนดให้ไม่มีระยะห่างภายใน body */
+    font-family: 'Montserrat', sans-serif; /* กำหนดฟอนต์เป็น Montserrat */
+    display: flex; /* ใช้ Flexbox layout */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    height: 100vh; /* ความสูงเต็มหน้าจอ */
+    position: relative; /* กำหนดตำแหน่งแบบ relative สำหรับการใช้งานตำแหน่งแบบ absolute ภายใน */
+    background-color: #f0f0f0; /* เพิ่มสีพื้นหลัง */
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* ป้องกันรูปภาพที่ใหญ่เกินไปที่จะไหลออกนอกพื้นที่ */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ปรับขนาดรูปภาพให้เต็มพื้นที่โดยไม่เกิน */
+    z-index: -1; /* ให้รูปภาพอยู่ข้างหลัง */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* ให้เนื้อหาอยู่ด้านหน้า */
+    background: rgba(255, 255, 255, 0.9); /* เพิ่มพื้นหลังให้เนื้อหา */
+    padding: 30px; /* เพิ่ม padding ให้เนื้อหา */
+    border-radius: 10px; /* เพิ่มขอบโค้งให้เนื้อหา */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้เนื้อหา */
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center; /* จัดข้อความตรงกลาง */
+}
+
+.option-group {
+    margin: 20px 0;
+    text-align: center; /* จัดปุ่มตรงกลาง */
+}
+
+.option-button {
+    margin: 10px;
+    padding: 15px 30px; /* เพิ่มขนาดปุ่ม */
+    background-color: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    width: calc(50% - 20px); /* ทำให้ปุ่มมีขนาดเท่ากัน */
+}
+
+.option-button:hover {
+    background-color: #4e4e4e;
+}
+
+.option-button.selected {
+    background-color: #4e4e4e;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 20px;
+}
+
+.confirm-button, .back-button {
+    padding: 15px 30px; /* เพิ่มขนาดปุ่ม */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* ทำให้ปุ่มมีขนาดเท่ากัน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-button {
+    background-color: #444444;
+    color: white;
+    cursor: not-allowed;
+}
+
+.confirm-button:enabled {
+    background-color: #ff7300;
+    cursor: pointer;
+}
+
+.confirm-button:enabled:hover {
+    background-color: #ff7300;
+}
+
+.back-button {
+    background-color: #444444;
+    color: rgb(255, 255, 255);
+}
+
+.back-button:hover {
+    background-color: #ff7300;
+}

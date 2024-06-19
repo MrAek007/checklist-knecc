@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Page</title>
+    <link rel="stylesheet" href="stylesiii.css">
+</head>
+<body>
+    <img src="KNECC NU (2).png" alt="Background Image" class="background-image">
+    <div class="selection-container">
+        <div class="option-group">
+            <h2>เลือกชั้น</h2>
+            <button class="option-button" id="floor1" onclick="selectFloor(1)">ชั้นที่ 1</button>
+            <button class="option-button" id="floor2" onclick="selectFloor(2)">ชั้นที่ 2</button>
+        </div>
+
+        <div class="option-group">
+            <h2>เลือกชนิดถังดับเพลิง</h2>
+            <button class="option-button" id="redGauge" onclick="selectExtinguisher('redGauge')">ถังดับเพลิงสีแดงแบบมีเกจวัด</button>
+            <button class="option-button" id="redNoGauge" onclick="selectExtinguisher('redNoGauge')">ถังดับเพลิงสีแดงแบบไม่มีเกจวัด</button>
+            <button class="option-button" id="greenGauge" onclick="selectExtinguisher('greenGauge')">ถังดับเพลิงสีเขียวแบบมีเกจวัด</button>
+        </div>
+
+        <div class="button-group">
+            <button class="back-button" id="backButton" onclick="goBack()">ย้อนกลับ</button>
+            <button class="confirm-button" id="confirmButton" onclick="confirmSelection()" disabled>ยืนยัน</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedFloor = null;
+        let selectedExtinguisher = null;
+
+        function selectFloor(floor) {
+            selectedFloor = floor;
+            document.querySelectorAll('.option-button[id^="floor"]').forEach(button => button.classList.remove('selected'));
+            document.getElementById(`floor${floor}`).classList.add('selected');
+            enableConfirmButton();
+        }
+
+        function selectExtinguisher(type) {
+            selectedExtinguisher = type;
+            document.querySelectorAll('.option-button[id$="Gauge"]').forEach(button => button.classList.remove('selected'));
+            document.getElementById(type).classList.add('selected');
+            enableConfirmButton();
+        }
+
+        function enableConfirmButton() {
+            document.getElementById('confirmButton').disabled = !(selectedFloor && selectedExtinguisher);
+        }
+
+        function confirmSelection() {
+            if (selectedFloor && selectedExtinguisher) {
+                const urlMap = {
+                    'redGauge': `redgauge${selectedFloor}.html`,
+                    'redNoGauge': `rednogauge${selectedFloor}.html`,
+                    'greenGauge': `greengauge${selectedFloor}.html`
+                };
+                window.location.href = urlMap[selectedExtinguisher];
+            } else {
+                alert('โปรดเลือกชั้นและถังดับเพลิง');
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'rules.html';
+        }
+    </script>
+</body>
+</html>

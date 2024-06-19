@@ -1,0 +1,63 @@
+body {
+    margin: 0; /* กำหนดให้ไม่มีระยะห่างรอบขอบของ body */
+    padding: 0; /* กำหนดให้ไม่มีระยะห่างภายใน body */
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์เป็น Arial หรือ sans-serif */
+    display: flex; /* ใช้ Flexbox layout */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    height: 100vh; /* ความสูงเต็มหน้าจอ */
+    position: relative; /* กำหนดตำแหน่งแบบ relative สำหรับการใช้งานตำแหน่งแบบ absolute ภายใน */
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* ป้องกันรูปภาพที่ใหญ่เกินไปที่จะไหลออกนอกพื้นที่ */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ปรับขนาดรูปภาพให้เต็มพื้นที่โดยไม่เกิน */
+    z-index: -1; /* ให้รูปภาพอยู่ข้างหลัง */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* ให้เนื้อหาอยู่ด้านหน้า */
+    /* สไตล์เนื้อหาอื่น ๆ บนพื้นหลัง */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.option-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #049a70;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.option-button:active {
+    background-color: #004494;
+    transform: translateY(0);
+}

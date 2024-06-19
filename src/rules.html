@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Button Example</title>
+    <style>
+        body {
+            margin: 0; /* กำหนดให้ไม่มีระยะห่างรอบขอบของ body */
+            padding: 0; /* กำหนดให้ไม่มีระยะห่างภายใน body */
+            font-family: Arial, sans-serif; /* กำหนดฟอนต์เป็น Arial หรือ sans-serif */
+            display: flex; /* ใช้ Flexbox layout */
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ความสูงเต็มหน้าจอ */
+            position: relative; /* กำหนดตำแหน่งแบบ relative สำหรับการใช้งานตำแหน่งแบบ absolute ภายใน */
+            overflow: hidden; /* ป้องกันการเลื่อนหน้าจอ */
+        }
+
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden; /* ป้องกันรูปภาพที่ใหญ่เกินไปที่จะไหลออกนอกพื้นที่ */
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ปรับขนาดรูปภาพให้เต็มพื้นที่โดยไม่เกิน */
+            z-index: -1; /* ให้รูปภาพอยู่ข้างหลัง */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* ให้เนื้อหาอยู่ด้านหน้า */
+            /* สไตล์เนื้อหาอื่น ๆ บนพื้นหลัง */
+        }
+
+        #nextButton {
+            margin: 10px;
+            padding: 5px 35px;
+            background-color: #ff6a00;
+            color: white;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 15px;
+            position: fixed; /* ใช้ตำแหน่งแบบ fixed */
+            bottom: 20px; /* กำหนดระยะห่างจากด้านล่าง */
+            right: 20px; /* กำหนดระยะห่างจากด้านขวา */
+            white-space: nowrap; /* ทำให้คำว่า "ถัดไป" อยู่ในบรรทัดเดียวกัน */
+        }
+
+        #nextButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="KNECC NU (1).png" alt="Background Image" class="background-image">
+    </div>
+    <div class="content">
+        <!-- เนื้อหาของคุณที่นี่ -->
+        <button id="nextButton">ถัดไป</button>
+    </div>
+
+    <script>
+        document.getElementById('nextButton').addEventListener('click', function() {
+            window.location.href = 'choice.html';
+        });
+    </script>
+</body>
+</html>
